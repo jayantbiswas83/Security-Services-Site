@@ -1,0 +1,7 @@
+{
+  "name": "CyberShield Sentinel",
+  "description": "Proactive, high-energy cybersecurity architectures and kinetic defense services for the AI era.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
