@@ -4,7 +4,8 @@ import { Navbar } from './components/common/Navbar';
 import { Footer } from './components/common/Footer';
 import { CyberBackground } from './components/common/CyberBackground';
 import { ConsultationModal } from './components/common/ConsultationModal';
-
+import { PrivacyPolicyPage } from './pages/PrivacyPolicyPage';
+import { DataDeletionPage } from './pages/DataDeletionPage';
 import { HomePage } from './pages/HomePage';
 import { ServicesPage } from './pages/ServicesPage';
 import { SolutionsPage } from './pages/SolutionsPage';
@@ -12,6 +13,15 @@ import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 
 export default function App() {
+    const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
+
+  if (pathname === '/privacy-policy') {
+    return <PrivacyPolicyPage />;
+  }
+
+  if (pathname === '/data-deletion') {
+    return <DataDeletionPage />;
+  }
   const [activePage, setActivePage] = useState<PageType>('home');
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
 
