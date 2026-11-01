@@ -13,18 +13,9 @@ import { AboutPage } from './pages/AboutPage';
 import { ContactPage } from './pages/ContactPage';
 
 export default function App() {
-    const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
-
-  if (pathname === '/privacy-policy') {
-    return <PrivacyPolicyPage />;
-  }
-
-  if (pathname === '/data-deletion') {
-    return <DataDeletionPage />;
-  }
   const [activePage, setActivePage] = useState<PageType>('home');
   const [isConsultationOpen, setIsConsultationOpen] = useState(false);
-
+    
   // Sync hash routing
   useEffect(() => {
     const handleHashChange = () => {
@@ -55,7 +46,17 @@ export default function App() {
   const handleCloseConsultation = () => {
     setIsConsultationOpen(false);
   };
+    
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/';
 
+  if (pathname === '/privacy-policy') {
+    return <PrivacyPolicyPage />;
+  }
+
+  if (pathname === '/data-deletion') {
+    return <DataDeletionPage />;
+  }  
+    
   return (
     <div className="relative min-h-screen bg-[#0c1322] text-[#dce2f8] flex flex-col justify-between selection:bg-[#4ad8f0]/30 selection:text-[#4ad8f0]">
       {/* Background Cyber Mesh & Dynamic Particle Nodes */}
